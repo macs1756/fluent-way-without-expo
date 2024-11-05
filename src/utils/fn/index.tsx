@@ -72,17 +72,7 @@ export const ttsInstance = async (word: string) => {
     Tts.setDefaultLanguage('en-US');
     Tts.setDefaultRate(0.6);
     Tts.setDefaultPitch(1);
-
-    const voices = await Tts.voices();
-
-    const bestVoice = voices.reduce((prev, current) => {
-      return prev.quality > current.quality ? prev : current;
-    });
-
-    if (bestVoice) {
-      Tts.setDefaultVoice(bestVoice.id);
-    }
-
+    Tts.setDefaultVoice('en-us-x-iol-local');
     Tts.speak(word);
   }
 };

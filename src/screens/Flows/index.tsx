@@ -17,7 +17,12 @@ function Flows({navigation}: NavigatorProps): React.JSX.Element {
             navigation.navigate('Quiz');
           }}
         />
-        <Button text={t('relativeBetweenWords')} onClick={() => {}} />
+        <Button
+          text={t('relativeBetweenWords')}
+          onClick={() => {
+            navigation.navigate('WorldCombinations');
+          }}
+        />
         <Button text={t('splitWordOnLetters')} onClick={() => {}} />
       </View>
     </Layout>

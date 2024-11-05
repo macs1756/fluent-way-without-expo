@@ -8,11 +8,13 @@ import HomeScreen from './src/screens/Home';
 import Flows from './src/screens/Flows';
 import Quiz from './src/screens/Quiz';
 import Starter from './src/starter';
+import WorldCombinations from './src/screens/WordCombinations';
 
 export type RootStackParamList = {
   Home: undefined;
   Flows: undefined;
   Quiz: undefined;
+  WorldCombinations: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -32,6 +34,7 @@ const Navigator = () => {
         />
         <Stack.Screen name="Flows" component={Flows} />
         <Stack.Screen name="Quiz" component={Quiz} />
+        <Stack.Screen name="WorldCombinations" component={WorldCombinations} />
       </Stack.Navigator>
       <Starter />
     </NavigationContainer>

@@ -11,7 +11,6 @@ import {
   ttsInstance,
 } from '../../utils/fn';
 import Button from '../../components/Button';
-import Tts from 'react-native-tts';
 
 interface IWord {
   id: number;
@@ -25,7 +24,7 @@ function Quiz(): React.JSX.Element {
   const [quizContent, setQuizContent] = useState<any>(null);
 
   const {t} = useTranslation();
-
+ 
   const clickOnAnswers = async (isCorrect: boolean) => {
     if (isCorrect) {
       await playSucs();
@@ -51,9 +50,9 @@ function Quiz(): React.JSX.Element {
       answers = [...answers, {...randomWord, isCorrect: true}];
       answers = shuffleArray(answers);
 
-       if (randomWord?.word) {
-         ttsInstance(randomWord?.word);
-       }
+      if (randomWord?.word) {
+        ttsInstance(randomWord?.word);
+      }
 
       return (
         <View style={[styles.grid]}>
@@ -121,10 +120,13 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     marginBottom: 20,
     textAlign: 'center',
+    color: '#4B4B4B',
+    letterSpacing: 2,
   },
   wordsCount: {
     textAlign: 'center',
     fontSize: 14,
+    color: '#999',
   },
 });
 
